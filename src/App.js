@@ -90,6 +90,7 @@ function App() {
     
   } else{
     setQuizState(defaultQuizState())
+    setQuizCards([])
   }
   
   
