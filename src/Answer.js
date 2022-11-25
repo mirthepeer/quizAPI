@@ -5,6 +5,9 @@ export default function Answer(props){
     if(props.selected === props.answer){
         style = {backgroundColor: ' rgb(180, 180, 217)', color:'black', fontWeight:'bold'}
     }
+    if(((props.selected === props.answer) && props.selected!==props.correctAnswer) && props.quizEnded){
+        style = {backgroundColor: 'rgba(255, 0, 0, 0.227)', color:'black', fontWeight:'bold'}
+    }
     if(props.quizEnded && props.answer===props.correctAnswer){
         style= {backgroundColor: 'lightgreen' , border: '3px solid white', fontWeight: 'bold'}
     }

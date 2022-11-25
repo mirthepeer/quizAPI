@@ -63,6 +63,7 @@ body{
 .option:hover{
   cursor: pointer;
   
+  
 }
 
 .answers{
@@ -110,9 +111,16 @@ button{
 }
 
 span{
-  color: rgb(107, 209, 107);
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+.correct{
+  color:rgb(107, 209, 107);
+}
+
+.incorrect{
+  color: rgba(255, 0, 0, 0.744);
 }
 
 .legends{
