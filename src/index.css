@@ -1,13 +1,117 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.intro{
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: fixed;
+
+}
+.intro .heading{
+  margin: 0;
+  font-size: 3rem;
+}
+.intro .sub{
+  margin: .5em 0;
+  font-size: 1.2rem;
+}
+
+.card{
+  max-width: 75%;
+  margin: 0 auto;
+  padding: .6em .4em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.158);
+  margin-top: 1em;
+  
+}
+
+.question{
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.725);
+}
+
+.option button{
+  border: 1px solid;
+  padding: .4em 1.3em;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px;
+  color: rgba(178, 46, 178, 0.252);
+}
+
+.option:hover{
+  cursor: pointer;
+  
+}
+
+.answers{
+  display: flex;
+  gap: 1.4em;
+  flex-wrap: wrap;
+
+}
+
+.button{
+  margin: 0 auto;
+  text-align: center;
+  /* box-shadow: 0 0 200px rgba(222, 212, 196, 0.148); */
+}
+
+
+button{
+  font-size: 1.1rem;
+  padding: .5em 1em;
+  margin-top: 1em;
+  background-color: rgba(247, 247, 247, 0.962);
+  border-radius: 5px;
+  font-weight: 400;
+  border: none;
+  color: black;
+ 
+}
+
+.intro p {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.score{
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.primary-btn{
+  font-size: 1.3rem;
+  color: white;
+  background-color: purple;
+  border-radius: 10px;
+  padding: 1em 1em;
+}
+
+span{
+  color: rgb(107, 209, 107);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.legends{
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
