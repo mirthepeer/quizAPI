@@ -1,6 +1,11 @@
 
 
 export default function Answer(props){
+
+
+    function createMarkup(){
+        return {__html: props.answer}
+    }
     let style
     if(props.selected === props.answer){
         style = {backgroundColor: ' rgb(180, 180, 217)', color:'black', fontWeight:'bold'}
@@ -17,7 +22,7 @@ export default function Answer(props){
 
     return (
         <>
-        <button disabled={props.quizEnded} style={style} className="option" onClick={(e)=>props.handleClick(props.id,props.answer)} >{props.answer}</button>
+        <button dangerouslySetInnerHTML={createMarkup()} disabled={props.quizEnded} style={style} className="option" onClick={(e)=>props.handleClick(props.id,props.answer)} ></button>
         </>
     )
 }
