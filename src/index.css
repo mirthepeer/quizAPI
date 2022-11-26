@@ -99,6 +99,7 @@ select{
 label{
   font-weight: 600;
   border-bottom: 1px black;
+  letter-spacing: 2px;
 }
 
 button{
