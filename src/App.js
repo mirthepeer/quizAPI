@@ -2,12 +2,13 @@ import React, { useEffect } from 'react'
 import './App.css';
 import QuizCard from './QuizCard'
 import uuid from 'react-uuid';
+import IntroForm from './IntroForm';
 
 function App() {
   const {useState} = React
 
   // Open Trivia API https://opentdb.com/api_config.php
-  const API = 'https://opentdb.com/api.php?amount=5&category=15' 
+  
 
   // All quiz data retrieved from API call will be stored here
   const [quizData, setQuizData] = useState([])
@@ -20,9 +21,32 @@ function App() {
 
   // Collection of Questions/Answers so we can use it to pass props to components
   const [quizCards, setQuizCards] = useState([])
+
+  const[resourceFormData, setResourceFormData] = useState(
+    {
+      questions: '5', //Max questions 50 as per the API Docs
+      catagory: '', //Empty string indicates random catagory questions
+      difficulty: '' //Empty String indicates random difficulty questions
+
+    }
+  )
+
+  const {questions, catagory, difficulty} = resourceFormData
+  const API = `https://opentdb.com/api.php?amount=${questions}&category=${catagory}&difficulty=${difficulty}` 
+
+
+console.log(resourceFormData)
+  function handleForm(event){
+    setResourceFormData(prev=>{
+      return (
+        {...prev, [event.target.name]: event.target.value}
+      )
+    })
+
+  }
   
-  console.log(quizCards)
-  console.log(quizState)
+  // console.log(quizCards)
+  // console.log(quizState)
   
   // Function to set Quiz State as defualt when needed
   function defaultQuizState(){
@@ -136,11 +160,16 @@ const quizCardsDisplay = quizCards.map(question=>{
 
   return (
     <>
+    {!quizActive &&
     <div className='intro' style={introStyle}>
-      {!quizActive &&<p className='heading'>Quiz Zone</p>}
-      {!quizActive &&<p className='sub'>Test you gaming knowledge</p>}
-      {!quizActive &&<button className='primary-btn' onClick={startQuiz}>Start Quiz</button>}
+      <IntroForm 
+      startQuiz={startQuiz}
+      formData={resourceFormData}
+      handleForm={handleForm}
+      />
+      
     </div>
+      }
     {loading? <h1 className='loading'>Loading...</h1>: ''}
     <div className="quiz">
       {quizActive && quizCardsDisplay}

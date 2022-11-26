@@ -78,7 +78,25 @@ body{
   text-align: center;
   /* box-shadow: 0 0 200px rgba(222, 212, 196, 0.148); */
 }
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.4em;
+}
 
+select{
+  padding: .6em;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.758);
+}
+
+
+
+label{
+  font-weight: 600;
+  border-bottom: 1px black;
+}
 
 button{
   font-size: 1.1rem;
