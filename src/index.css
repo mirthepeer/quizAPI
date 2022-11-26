@@ -132,6 +132,13 @@ button{
   padding: 1em 1em;
 }
 
+.primary-btn:hover{
+  cursor: pointer;
+  background-color: yellowgreen;
+  color: rgba(0, 0, 0, 0.959);
+  font-weight: bold;
+}
+
 span{
   font-weight: 600;
   letter-spacing: 1px;
