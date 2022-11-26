@@ -2,7 +2,12 @@ import Answer from "./Answer"
 
 
 export default function QuizCard(props){
-    
+    // since the question is a String format html we have to use this so it displays in HTML format
+    function createMarkup(){
+        return {__html: props.question}
+    }
+
+    // collection of answers for each question
     const answers = props.answers.map(answer=>{
         return (
             <Answer
@@ -21,7 +26,7 @@ export default function QuizCard(props){
     return(
         <>
         <div className="card">
-            <p className="question">{props.question}</p>
+            <p dangerouslySetInnerHTML={createMarkup()} className="question"></p>
             <div className="answers">
                 {answers}
             </div>

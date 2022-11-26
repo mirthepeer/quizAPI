@@ -2,19 +2,29 @@ import React, { useEffect } from 'react'
 import './App.css';
 import QuizCard from './QuizCard'
 import uuid from 'react-uuid';
-import ReactLoading from 'react-loading';
 
 function App() {
   const {useState} = React
-  const API_KEY = 'https://opentdb.com/api.php?amount=5&category=15' 
+
+  // Open Trivia API https://opentdb.com/api_config.php
+  const API = 'https://opentdb.com/api.php?amount=5&category=15' 
+
+  // All quiz data retrieved from API call will be stored here
   const [quizData, setQuizData] = useState([])
+
+  // The state of the quiz which takes care of the state of quiz at any given moment
   const [quizState, setQuizState] = useState(defaultQuizState())
+
+  // Destructuring Objects for future ease of access 
   const {showScore,quizActive, loading, score, quizEnded} = quizState
+
+  // Collection of Questions/Answers so we can use it to pass props to components
   const [quizCards, setQuizCards] = useState([])
   
   console.log(quizCards)
   console.log(quizState)
   
+  // Function to set Quiz State as defualt when needed
   function defaultQuizState(){
     return {
       quizActive: false,
@@ -26,10 +36,10 @@ function App() {
   }
 
   
-  
+  // Fetching API whenever Quiz is active and setting the quizData
   useEffect(()=>{
     if(quizActive){
-      fetch(API_KEY)
+      fetch(API)
       .then(res=>res.json())
       .then(data=> 
         setQuizData(data.results)
@@ -41,10 +51,12 @@ function App() {
 
   useEffect(()=>{
     if(quizData){
+      // using quizData to extract all the relavant data needed and store it in the form below.
       const quizCardContent = quizData.map(item => {
         return {
-          id: uuid(),
+          id: uuid(), // Assigning ids to each quizCard that is created
           question: item.question,
+          //  merging the correct and incorrect Answers into one Array and randomizing thier order so the order of anwswers is not the same every time.
           answers: [...item.incorrect_answers , item.correct_answer].sort((a, b) => 0.5 - Math.random()),
           correct_answer: item.correct_answer,
           selected: '' 
@@ -62,6 +74,8 @@ function App() {
 
   },[quizData])
 
+
+  // this allows us to highlight the selected answer when choosing the answer option
   function selectOption(id, checkedAnswer){
     setQuizCards(prev=>{
       return(
@@ -73,6 +87,7 @@ function App() {
     })
   }
 
+  // Quiz state is changed to active so our useEffect can run as it is the dependency and loading screen can be showed
   function startQuiz(){
     setQuizState(prev=> ({...prev, quizActive:true}) )
     setQuizState(prev=>{
@@ -81,6 +96,7 @@ function App() {
      
   }
 
+  // this function serves two purposes. To check answers and if answers have been checked user can start a new quiz and quiz state is set to default again
  function checkAnswers(){
   if(!quizEnded){
     const correctQuestion = quizCards.filter(question=>{
@@ -97,7 +113,7 @@ function App() {
 
  }
 
-
+// collection of all Question/answers in form of components the data of quizCards aquired from quizData is mapped into it's respective QuizCard component and data is passed through props
 const quizCardsDisplay = quizCards.map(question=>{
   return (
     <QuizCard 
