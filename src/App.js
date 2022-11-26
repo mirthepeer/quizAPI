@@ -35,7 +35,7 @@ function App() {
   const API = `https://opentdb.com/api.php?amount=${questions}&category=${catagory}&difficulty=${difficulty}` 
 
 
-console.log(resourceFormData)
+// console.log(resourceFormData)
   function handleForm(event){
     setResourceFormData(prev=>{
       return (
@@ -72,6 +72,18 @@ console.log(resourceFormData)
     
     
   },[quizState.quizActive])
+
+
+  useEffect(()=>{ //When the show answer is clicked this scrolls the screen to the bottom so user can clearly see the score without scrolling
+    if(showScore){
+      window.scroll({
+        top: document.body.offsetHeight,
+        left: 0, 
+        behavior: 'smooth',
+      })
+    }
+    
+  },[showScore])
 
   useEffect(()=>{
     if(quizData){
