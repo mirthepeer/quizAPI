@@ -174,11 +174,12 @@ const quizCardsDisplay = quizCards.map(question=>{
     <div className="quiz">
       {quizActive && quizCardsDisplay}
       <div className='button'>
-      <div className='legends'>
-        {showScore && <p><span className='correct'>GREEN</span> = Correct Answer</p>} 
-        {showScore && <p><span className='incorrect'>RED</span> = Incorrect Answer</p>} 
-      </div>
       {showScore && <p className='score'>Score: {score}/{quizCardsDisplay.length}</p>}
+      <div className='legends'>
+        {showScore && <p><span className='correct'>Correct Answer</span></p>} 
+        {showScore && <p><span className='incorrect'>Incorrect Answer</span> </p>} 
+      </div>
+     
       {(quizActive && !loading) &&<button className='primary-btn' onClick={checkAnswers}>{showScore? 'New Quiz' : 'Check Answers'}</button>}
     </div>
     </div>
