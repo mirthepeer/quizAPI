@@ -21,8 +21,8 @@ export default function Answer(props){
      
 
     return (
-        <>
+        <div className="answer">
         <button dangerouslySetInnerHTML={createMarkup()} disabled={props.quizEnded} style={style} className="option" onClick={(e)=>props.handleClick(props.id,props.answer)} ></button>
-        </>
+        </div>
     )
 }
