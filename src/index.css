@@ -2,13 +2,32 @@
   box-sizing: border-box;
 }
 
+html{height: 100%;}
+
 body{
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+  min-height: 100%;
+  position: relative;
+  border: 1px solid black;
+  margin: 0;
+  
+}
+
+body::before{
+  content: '';
+  background-image: url('https://img.freepik.com/free-vector/question-mark-pattern_1319-109.jpg?w=1380&t=st=1669505094~exp=1669505694~hmac=b7de15a87d3d4c065d0e2c5493b776ac28e2aca82ec658d021efa01d8bb4fa49');
+  inset: 0;
+  position: absolute;
+  opacity: .1;
+
+}
+.quiz{
+  position: relative;
 }
 
 .intro{
+  position: relative;
   margin: 0 auto;
-  width: 100%;
   text-align: center;
   letter-spacing: 1px;
   display: flex;
@@ -16,7 +35,6 @@ body{
   justify-content: center;
   align-items: center;
   height: 100vh;
-  position: fixed;
   text-transform: capitalize;
 
 }
@@ -76,10 +94,10 @@ body{
 
 }
 
-.button{
+.summary{
   margin: 0 auto;
   text-align: center;
-  /* box-shadow: 0 0 200px rgba(222, 212, 196, 0.148); */
+  padding: .5em;
 }
 form{
   display: flex;

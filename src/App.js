@@ -171,7 +171,7 @@ const quizCardsDisplay = quizCards.map(question=>{
 
 
   return (
-    <>
+    <section>
     {!quizActive &&
     <div className='intro' style={introStyle}>
       <IntroForm 
@@ -185,7 +185,7 @@ const quizCardsDisplay = quizCards.map(question=>{
     {loading? <h1 className='loading'>Loading...</h1>: ''}
     <div className="quiz">
       {quizActive && quizCardsDisplay}
-      <div className='button'>
+      <div className='summary'>
       {showScore && <p className='score'>Score: {score}/{quizCardsDisplay.length}</p>}
       <div className='legends'>
         {showScore && <p><span className='correct'>Correct Answer</span></p>} 
@@ -197,7 +197,7 @@ const quizCardsDisplay = quizCards.map(question=>{
     </div>
     
     
-    </>
+    </section>
   );
 }
 
