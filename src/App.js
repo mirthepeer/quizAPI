@@ -167,6 +167,8 @@ const quizCardsDisplay = quizCards.map(question=>{
 })
 
  const introStyle = {display: !quizActive?'':'none'}
+ 
+ const scoreStyle = {color: score/quizCardsDisplay.length>=0.5? 'green' : 'red' }
   
 
 
@@ -187,7 +189,7 @@ const quizCardsDisplay = quizCards.map(question=>{
     <div className="quiz">
       {quizActive && quizCardsDisplay}
       <div className='summary'>
-      {showScore && <p className='score'>Score: {score}/{quizCardsDisplay.length}</p>}
+      {showScore && <p className='score'>Score: <span style={scoreStyle}>{score}</span>/{quizCardsDisplay.length}</p>}
       <div className='legends'>
         {showScore && <p><span className='correct'>Correct Answer</span></p>} 
         {showScore && <p><span className='incorrect'>Incorrect Answer</span> </p>} 
