@@ -182,6 +182,7 @@ const quizCardsDisplay = quizCards.map(question=>{
       
     </div>
       }
+       {showScore && <h1 style={{margin:'0', textAlign:'center'}}>Quiz Summary</h1>} 
     {loading? <h1 className='loading'>Loading...</h1>: ''}
     <div className="quiz">
       {quizActive && quizCardsDisplay}
