@@ -210,3 +210,10 @@ span{
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.544);
 
 }
+
+.endgame-summary{
+  letter-spacing: 2px;
+  padding: .4em;
+  border-bottom: 3px solid black;
+ 
+}
