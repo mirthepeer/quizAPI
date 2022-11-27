@@ -18,6 +18,7 @@ body::before{
   inset: 0;
   position: absolute;
   opacity: .1;
+  background-blend-mode: multiply;
 
 }
 .quiz{
@@ -36,20 +37,26 @@ body::before{
   text-transform: capitalize;
 
 }
+
+
 .intro .heading{
   margin: 0;
   font-size: 3rem;
+  text-shadow: 0 3px palegoldenrod;
 }
 .intro .sub{
   margin: .2em 0 0.8em ;
-  font-size: 1.2rem;
-  color: rgba(0, 0, 0, 0.529);
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.414);
+  text-shadow: 0 0 0;
+  font-weight: bold;
 
 }
 .loading{
   text-align: center;
   font-size: 2rem;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  margin: 0;
 }
 
 .card{
@@ -105,6 +112,9 @@ form{
   display: flex;
   flex-direction: column;
   gap: 1.4em;
+  padding: 1em;
+  background-color: rgba(185, 180, 223, 0.805);
+  border-radius: 8px;
 }
 
 select{
