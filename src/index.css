@@ -178,6 +178,7 @@ button{
   background-color: rgb(162, 81, 162);
   color: rgb(253, 251, 251);
   font-weight: bold;
+  text-shadow: none;
 }
 
 
