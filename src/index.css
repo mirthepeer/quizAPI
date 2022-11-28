@@ -2,11 +2,9 @@
   box-sizing: border-box;
 }
 
-html{height: 100%;}
 
 body{
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  min-height: 100%;
   position: relative;
   margin: 0;
   
@@ -17,8 +15,7 @@ body::before{
   background-image: url('https://img.freepik.com/free-vector/question-mark-pattern_1319-109.jpg?w=1380&t=st=1669505094~exp=1669505694~hmac=b7de15a87d3d4c065d0e2c5493b776ac28e2aca82ec658d021efa01d8bb4fa49');
   inset: 0;
   position: absolute;
-  opacity: .1;
-  background-blend-mode: multiply;
+  opacity: 0.03;
 
 }
 .quiz{
@@ -27,7 +24,6 @@ body::before{
 
 .intro{
   position: relative;
-  text-align: center;
   letter-spacing: 4px;
   display: flex;
   flex-direction: column;
@@ -43,6 +39,7 @@ body::before{
   margin: 0;
   font-size: 3rem;
   text-shadow: 0 3px palegoldenrod;
+
 }
 .intro .sub{
   margin: .2em 0 0.8em ;
@@ -50,6 +47,7 @@ body::before{
   color: rgba(0, 0, 0, 0.414);
   text-shadow: 0 0 0;
   font-weight: bold;
+  letter-spacing: 1px;
 
 }
 .loading{
@@ -107,6 +105,7 @@ input{
   margin: 0 auto;
   text-align: center;
   padding: .5em;
+  color: rgba(0, 0, 0, 0.725);
 }
 form{
   display: flex;
@@ -181,16 +180,16 @@ span{
 }
 
 .correct{
-  color:rgb(51, 161, 51);
-  background-color:rgba(248, 248, 248, 0.722);
-  padding: .2em;
+  color:white;
+  background-color:rgb(51, 161, 51);
+  padding: .4em;
   border-radius: 5px;
 }
 
 .incorrect{
-  color: rgba(255, 0, 0, 0.744);
-  background-color: rgba(248, 248, 248, 0.722);
-  padding: .2em;
+  color: white;
+  background-color:  rgba(255, 0, 0, 0.744);
+  padding: .4em;
   border-radius: 5px;
 }
 
@@ -199,7 +198,7 @@ span{
   letter-spacing: 2px;
   font-size: 1.1rem;
   font-weight: 600;
-  background-color: rgba(184, 161, 217, 0.962);
+  background-color: rgba(184, 161, 217, 0.284);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -207,13 +206,13 @@ span{
   border-radius: 10px;
   text-transform:uppercase ;
   max-width: 400px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.544);
 
 }
 
 .endgame-summary{
   letter-spacing: 2px;
   padding: .4em;
-  border-bottom: 3px solid black;
+  border-bottom: 1px solid;
+  color: rgba(0, 0, 0, 0.725);
  
 }
