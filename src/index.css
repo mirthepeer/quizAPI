@@ -1,33 +1,30 @@
-*{
+* {
   box-sizing: border-box;
 }
 
-html{
+html {
   height: 100%;
 }
 
-
-body{
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   position: relative;
   margin: 0;
   min-height: 100%;
-  
 }
 
-body::before{
-  content: '';
-  background-image: url('https://img.freepik.com/free-vector/question-mark-pattern_1319-109.jpg?w=1380&t=st=1669505094~exp=1669505694~hmac=b7de15a87d3d4c065d0e2c5493b776ac28e2aca82ec658d021efa01d8bb4fa49');
+body::before {
+  content: "";
+  background-image: url("https://img.freepik.com/free-vector/question-mark-pattern_1319-109.jpg?w=1380&t=st=1669505094~exp=1669505694~hmac=b7de15a87d3d4c065d0e2c5493b776ac28e2aca82ec658d021efa01d8bb4fa49");
   inset: 0;
   position: absolute;
   opacity: 0.03;
-
 }
-.quiz{
+.quiz {
   position: relative;
 }
 
-.intro{
+.intro {
   position: relative;
   letter-spacing: 4px;
   display: flex;
@@ -36,41 +33,36 @@ body::before{
   align-items: center;
   height: 100vh;
   text-transform: capitalize;
-
 }
 
-
-.intro .heading{
+.intro .heading {
   margin: 0;
   font-size: 3rem;
   text-shadow: 0 3px palegoldenrod;
-
 }
-.intro .sub{
-  margin: .2em 0 0.8em ;
+.intro .sub {
+  margin: 0.2em 0 0.8em;
   font-size: 1rem;
   color: rgba(0, 0, 0, 0.414);
   text-shadow: 0 0 0;
   font-weight: bold;
   letter-spacing: 1px;
-
 }
-.loading{
+.loading {
   text-align: center;
   font-size: 2rem;
   letter-spacing: 2px;
   margin: 0;
 }
 
-.card{
+.card {
   max-width: 75%;
   margin: 0 auto;
-  padding: 1.7em .4em;
+  padding: 1.7em 0.4em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.363);
-  
 }
 
-.question{
+.question {
   font-weight: 600;
   font-size: 1.1rem;
   letter-spacing: 1px;
@@ -78,9 +70,9 @@ body::before{
   margin-top: 0;
 }
 
-.option button{
+.option button {
   border: 1px solid;
-  padding: .4em 1.3em;
+  padding: 0.4em 1.3em;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -89,30 +81,27 @@ body::before{
   color: rgba(178, 46, 178, 0.252);
 }
 
-.option:hover{
+.option:hover {
   cursor: pointer;
-  
-  
 }
 
-input{
-  -webkit-appearance:none;
+input {
+  -webkit-appearance: none;
 }
 
-.answers{
+.answers {
   display: flex;
   gap: 1.4em;
   flex-wrap: wrap;
-
 }
 
-.summary{
+.summary {
   margin: 0 auto;
   text-align: center;
-  padding: .5em;
+  padding: 0.5em;
   color: rgba(0, 0, 0, 0.725);
 }
-form{
+form {
   display: flex;
   flex-direction: column;
   gap: 1.4em;
@@ -121,34 +110,30 @@ form{
   border-radius: 8px;
 }
 
-select{
-  padding: .6em;
+select {
+  padding: 0.6em;
   font-size: 1.3rem;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.758);
   background-color: white;
   border: 1px solid;
   border-radius: 12px;
-  
 }
 
-
-
-label{
+label {
   font-weight: 600;
   border-bottom: 1px black;
   letter-spacing: 2px;
 }
 
-button{
+button {
   font-size: 1.1rem;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   background-color: rgba(151, 144, 161, 0.962);
   border-radius: 5px;
   font-weight: 600;
   border: none;
   color: white;
- 
 }
 
 .intro p {
@@ -156,12 +141,12 @@ button{
   font-size: 2rem;
 }
 
-.score{
+.score {
   font-weight: 600;
   font-size: 1.5rem;
 }
 
-.primary-btn{
+.primary-btn {
   font-size: 1.3rem;
   color: rgb(255, 255, 255);
   background-color: rgba(123, 83, 145, 0.807);
@@ -173,7 +158,7 @@ button{
   text-shadow: 0 0 10px black;
 }
 
-.primary-btn:hover{
+.primary-btn:hover {
   cursor: pointer;
   background-color: rgb(162, 81, 162);
   color: rgb(253, 251, 251);
@@ -181,28 +166,26 @@ button{
   text-shadow: none;
 }
 
-
-
-span{
+span {
   font-weight: 600;
   letter-spacing: 1px;
 }
 
-.correct{
-  color:white;
-  background-color:rgb(51, 161, 51);
-  padding: .4em;
-  border-radius: 5px;
-}
-
-.incorrect{
+.correct {
   color: white;
-  background-color:  rgba(237, 39, 39, 0.897);
-  padding: .4em;
+  background-color: rgb(51, 161, 51);
+  padding: 0.4em;
   border-radius: 5px;
 }
 
-.legends{
+.incorrect {
+  color: white;
+  background-color: rgba(237, 39, 39, 0.897);
+  padding: 0.4em;
+  border-radius: 5px;
+}
+
+.legends {
   position: relative;
   letter-spacing: 2px;
   font-size: 1.1rem;
@@ -213,15 +196,13 @@ span{
   align-items: center;
   margin: 0 auto 1em auto;
   border-radius: 10px;
-  text-transform:uppercase ;
+  text-transform: uppercase;
   max-width: 400px;
-
 }
 
-.endgame-summary{
+.endgame-summary {
   letter-spacing: 2px;
-  padding: .4em;
+  padding: 0.4em;
   border-bottom: 1px solid;
   color: rgba(0, 0, 0, 0.725);
- 
 }
